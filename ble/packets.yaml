@@ -1,0 +1,36 @@
+version: 1
+endianness: little
+
+packets:
+  punch_event:
+    length_bytes: 11
+    fields:
+      - { name: seq,   type: uint32, offset: 0 }
+      - { name: t_ms,  type: uint32, offset: 4 }
+      - { name: force, type: uint16, offset: 8 }
+      - { name: flags, type: uint8,  offset: 10 }
+
+  session_summary:
+    length_bytes: 10
+    fields:
+      - { name: session_ms,  type: uint32, offset: 0 }
+      - { name: punch_count, type: uint32, offset: 4 }
+      - { name: last_force,  type: uint16, offset: 8 }
+
+  control:
+    length_bytes_min: 1
+    fields:
+      - { name: cmd, type: uint8, offset: 0 }
+
+enums:
+  control_cmd:
+    start: 1
+    stop: 2
+    reset: 3
+
+bitfields:
+  punch_flags:
+    validPunch: 0
+    clipped: 1
+    calibrated: 2
+

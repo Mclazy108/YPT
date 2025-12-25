@@ -1,0 +1,23 @@
+version: 1
+name: YPT BLE
+
+service:
+  name: YPT-Detector
+  uuid: fb99838c-9ab5-4e2d-b791-db715296b50b
+
+characteristics:
+  punch_event:
+    name: Punch Event
+    uuid: 7e30f69a-dcda-4a31-ac48-3d40c55e0f56
+    properties: [notify]
+  
+  session_summary:
+    name: Session Summary
+    uuid: a088aa46-a842-4bc3-b5ba-299481db4327
+    properties: [read,notify]
+
+  control:
+    name: Control
+    uuid: 810f79ac-3e1b-4a0a-acee-b5c215abf231
+    properties: [write]
+

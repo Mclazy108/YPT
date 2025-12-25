@@ -1,0 +1,19 @@
+version: 1
+endianness: little
+
+vectors:
+  - name: punch_event_example
+    description: seq=1, t_ms=1000, force=500, flags=0x01
+    packet: punch_event
+    bytes_hex: "01000000 E8030000 F401 01"
+
+  - name: session_summary_example
+    description: session_ms=12345, punch_count=42, last_force=900
+    packet: session_summary
+    bytes_hex: "39300000 2A000000 8403"
+
+  - name: control_start
+    description: cmd=0x01
+    packet: control
+    bytes_hex: "01"
+
